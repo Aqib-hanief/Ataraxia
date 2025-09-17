@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Aqib Hanief Bhat">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal dashboard with analog clock, weather, and inspirational quotes">
+    <title>Ataraxia - Personal Dashboard</title>
+    <link rel="icon" href="images/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="images/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="weather-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button class="jsCurrentWeather tooltip" aria-label="Get current weather">
+        <svg height="50" viewBox="0 0 512.001 512" width="50" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="weather-icon-title">
+            <title id="weather-icon-title">Weather Icon</title>
+            <path d="m255.863281 168.699219c-48.046875 0-87.140625 39.09375-87.140625 87.144531 0 48.046875 39.09375 87.140625 87.140625 87.140625 48.050781 0 87.144531-39.09375 87.144531-87.140625 0-48.050781-39.09375-87.144531-87.144531-87.144531zm0 0" />
+            <path d="m497.003906 240.84375h-55.054687c-7.269531-91.003906-80.082031-163.820312-171.089844-171.085938v-54.761718c0-8.28125-6.714844-14.996094-14.996094-14.996094s-14.996093 6.714844-14.996093 14.996094v54.761718c-91.007813 7.265626-163.820313 80.082032-171.089844 171.085938h-54.78125c-8.28125 0-14.996094 6.714844-14.996094 15 0 8.28125 6.714844 14.996094 14.996094 14.996094h54.78125c7.269531 91.003906 80.082031 163.820312 171.089844 171.089844v54.757812c0 8.28125 6.714843 14.996094 14.996093 14.996094 8.285157 0 14.996094-6.714844 14.996094-14.996094v-54.757812c91.007813-7.269532 163.824219-80.085938 171.089844-171.089844h55.054687c8.28125 0 14.996094-6.714844 14.996094-14.996094 0-8.285156-6.714844-15-14.996094-15zm-241.140625 171.695312c-86.402343 0-156.695312-70.296874-156.695312-156.695312 0-86.402344 70.292969-156.699219 156.695312-156.699219 86.402344 0 156.695313 70.296875 156.695313 156.699219 0 86.398438-70.292969 156.695312-156.695313 156.695312zm0 0" />
+        </svg>
+        <span class="tooltiptext">Click to get current weather</span>
+    </button>
+    <section class="temperature hidden" aria-label="Weather information">
+        <div class="temp-icon">
+            <i class="weather-icon" aria-label="Weather condition icon"></i>
+            <div class="temp" role="text" aria-label="Current temperature"></div>
+        </div>
+        <div class="current-location" role="text" aria-label="Current location"></div>
+    </section>
+    
+    <main class="container">
+        <div class="box">
+            <div class="clock" role="img" aria-label="Analog clock">
+                <div class="hour">
+                    <div class="hr" id="hr" aria-hidden="true"></div>
+                </div>
+                <div class="min">
+                    <div class="mn" id="mn" aria-hidden="true"></div>
+                </div>
+                <div class="sec">
+                    <div class="sc" id="sc" aria-hidden="true"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <section class="quote-container" aria-label="Inspirational quote">
+        <blockquote class="quote" role="text"></blockquote>
+        <cite class="author" role="text"></cite>
+    </section>
+    <footer class="icons-div">
+        <nav aria-label="Social media links">
+            <a class="icon linkedin" href="https://www.linkedin.com/in/aqib-hanief-bhat-85782592/" target="_blank"
+                rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                <svg height="50" viewBox="0 0 512 512.00038" width="50"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="169.9940010834" x2="299.4934135904"
+                        y1="71.98622701" y2="349.0548448864">
+                        <stop offset="0" stop-color="#0077b5" />
+                        <stop offset="1" stop-color="#0066b2" />
+                    </linearGradient>
+                    <linearGradient id="b">
+                        <stop offset="0" stop-color="#0066b2" stop-opacity="0" />
+                        <stop offset="1" stop-color="#07485e" />
+                    </linearGradient>
+                    <linearGradient id="c" gradientUnits="userSpaceOnUse" x1="364.2825237824" x2="-379.5864327114"
+                        xlink:href="#b" y1="314.0868361356" y2="-84.9521808166" />
+                    <linearGradient id="d" gradientUnits="userSpaceOnUse" x1="256.0003" x2="256.0003" xlink:href="#b"
+                        y1="415.8267010284" y2="522.8344458318" />
+                    <linearGradient id="e" gradientUnits="userSpaceOnUse" x1="271.3543834602" x2="79.916898849"
+                        xlink:href="#b" y1="273.7754525398" y2="82.3380683208" />
+                    <linearGradient id="f" gradientUnits="userSpaceOnUse" x1="383.7494748922" x2="-1.7565731078"
+                        xlink:href="#b" y1="451.630876413" y2="270.924916413" />
+                    <linearGradient id="g" gradientUnits="userSpaceOnUse" x1="477.5305473456" x2="208.9696664582"
+                        xlink:href="#b" y1="491.2543726544" y2="222.693491767" />
+                    <path
+                        d="m420.421875 503.234375c-109.503906 11.6875-219.339844 11.6875-328.84375 0-43.664063-4.660156-78.152344-39.148437-82.8125-82.816406-11.6875-109.503907-11.6875-219.335938 0-328.839844 4.660156-43.664063 39.148437-78.152344 82.8125-82.8125 109.503906-11.6875 219.335937-11.6875 328.839844 0 43.667969 4.660156 78.15625 39.148437 82.816406 82.8125 11.6875 109.503906 11.6875 219.335937 0 328.839844-4.660156 43.667969-39.144531 78.15625-82.8125 82.816406zm0 0"
+                        fill="url(#a)" />
+                    <path
+                        d="m475.386719 110.097656c-4.132813-38.746094-34.734375-69.351562-73.484375-73.488281-97.171875-10.367187-194.632813-10.367187-291.804688 0-38.746094 4.136719-69.351562 34.742187-73.488281 73.488281-10.367187 97.171875-10.367187 194.632813 0 291.800782 4.136719 38.75 34.742187 69.355468 73.488281 73.488281 97.171875 10.371093 194.632813 10.371093 291.800782 0 38.75-4.132813 69.355468-34.738281 73.488281-73.488281 10.371093-97.167969 10.371093-194.628907 0-291.800782zm0 0"
+                        fill="url(#c)" />
+                    <path
+                        d="m7.671875 409.804688c.351563 3.539062.714844 7.078124 1.09375 10.617187 4.660156 43.664063 39.148437 78.152344 82.816406 82.8125 109.503907 11.6875 219.335938 11.6875 328.839844 0 43.667969-4.660156 78.152344-39.148437 82.8125-82.8125.378906-3.539063.742187-7.078125 1.097656-10.617187zm0 0"
+                        fill="url(#d)" />
+                    <path
+                        d="m497.714844 443.570312-330.40625-330.410156c-7.378906-9.628906-18.988282-15.84375-32.054688-15.84375-22.289062 0-40.359375 18.066406-40.359375 40.355469 0 13.070313 6.21875 24.679687 15.847657 32.054687l329.257812 329.261719c26.613281-8.855469 47.824219-29.304687 57.714844-55.417969zm0 0"
+                        fill="url(#e)" />
+                    <path
+                        d="m169.152344 204.503906h-67.800782v210.179688l96.203126 96.203125c74.304687 2.8125 148.660156.269531 222.863281-7.652344 12.972656-1.382813 25.125-5.417969 35.9375-11.527344zm0 0"
+                        fill="url(#f)" />
+                    <path
+                        d="m399.410156 222.109375c-12.402344-13.597656-30.257812-22.128906-50.105468-22.128906-31.394532 0-51.65625 11.027343-63.714844 21.265625l-13.285156-16.742188h-62.472657v210.179688l96.492188 96.492187c38.054687-1.238281 76.09375-3.886719 114.097656-7.941406 43.667969-4.660156 78.152344-39.148437 82.8125-82.8125 3.117187-29.195313 5.394531-58.414063 6.847656-87.640625zm0 0"
+                        fill="url(#g)" />
+                    <g fill="#fff">
+                        <path d="m101.355469 204.503906h67.796875v210.179688h-67.796875zm0 0" />
+                        <path
+                            d="m349.304688 199.980469c-49.683594 0-71.507813 27.613281-77 36.019531v-31.496094h-62.472657v210.179688h67.800781v-105.574219c0-30.507813 14.042969-54.238281 40.679688-54.238281 26.632812 0 30.992188 29.539062 30.992188 65.863281v93.949219h67.800781v-146.902344c0-37.445312-30.355469-67.800781-67.800781-67.800781zm0 0" />
+                        <path
+                            d="m175.609375 137.675781c0 22.289063-18.066406 40.355469-40.355469 40.355469-22.289062 0-40.359375-18.066406-40.359375-40.355469 0-22.289062 18.070313-40.359375 40.359375-40.359375 22.289063 0 40.355469 18.070313 40.355469 40.359375zm0 0" />
+                    </g>
+                </svg>
+            </a>
+            <a class="icon insta" href="https://www.instagram.com/aqibhanief/" target="_blank"
+                rel="noopener noreferrer" aria-label="Instagram Profile">
+                <svg enable-background="new 0 0 24 24" height="50" viewBox="0 0 24 24"
+                    width="50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <linearGradient id="SVGID_1_" gradientTransform="matrix(0 -1.982 -1.844 0 -132.522 -51.077)"
+                        gradientUnits="userSpaceOnUse" x1="-37.106" x2="-26.555" y1="-72.705" y2="-84.047">
+                        <stop offset="0" stop-color="#fd5" />
+                        <stop offset=".5" stop-color="#ff543e" />
+                        <stop offset="1" stop-color="#c837ab" />
+                    </linearGradient>
+                    <path
+                        d="m1.5 1.633c-1.886 1.959-1.5 4.04-1.5 10.362 0 5.25-.916 10.513 3.878 11.752 1.497.385 14.761.385 16.256-.002 1.996-.515 3.62-2.134 3.842-4.957.031-.394.031-13.185-.001-13.587-.236-3.007-2.087-4.74-4.526-5.091-.559-.081-.671-.105-3.539-.11-10.173.005-12.403-.448-14.41 1.633z"
+                        fill="url(#SVGID_1_)" />
+                    <path
+                        d="m11.998 3.139c-3.631 0-7.079-.323-8.396 3.057-.544 1.396-.465 3.209-.465 5.805 0 2.278-.073 4.419.465 5.804 1.314 3.382 4.79 3.058 8.394 3.058 3.477 0 7.062.362 8.395-3.058.545-1.41.465-3.196.465-5.804 0-3.462.191-5.697-1.488-7.375-1.7-1.7-3.999-1.487-7.374-1.487zm-.794 1.597c7.574-.012 8.538-.854 8.006 10.843-.189 4.137-3.339 3.683-7.211 3.683-7.06 0-7.263-.202-7.263-7.265 0-7.145.56-7.257 6.468-7.263zm5.524 1.471c-.587 0-1.063.476-1.063 1.063s.476 1.063 1.063 1.063 1.063-.476 1.063-1.063-.476-1.063-1.063-1.063zm-4.73 1.243c-2.513 0-4.55 2.038-4.55 4.551s2.037 4.55 4.55 4.55 4.549-2.037 4.549-4.55-2.036-4.551-4.549-4.551zm0 1.597c3.905 0 3.91 5.908 0 5.908-3.904 0-3.91-5.908 0-5.908z"
+                        fill="#fff" />
+                </svg>
+            </a>
+        </nav>
+    </footer>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+/* CSS-Only Weather Icons - Alternative to fonts */
+/* Use this instead of weather-icons.css if you prefer pure CSS icons */
+
+.css-weather-icon {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin: 10px auto;
+    display: block;
+}
+
+/* Sunny/Clear */
+.css-weather-icon.clear::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, #ffd700 0%, #ffa500 100%);
+    border-radius: 50%;
+    box-shadow: 
+        0 0 0 8px #ffd70033,
+        0 0 0 16px #ffd70011;
+}
+
+.css-weather-icon.clear::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: 
+        linear-gradient(45deg, transparent 45%, #ffd700 47%, #ffd700 53%, transparent 55%),
+        linear-gradient(-45deg, transparent 45%, #ffd700 47%, #ffd700 53%, transparent 55%),
+        linear-gradient(0deg, transparent 45%, #ffd700 47%, #ffd700 53%, transparent 55%),
+        linear-gradient(90deg, transparent 45%, #ffd700 47%, #ffd700 53%, transparent 55%);
+    animation: rotate 8s linear infinite;
+}
+
+/* Cloudy */
+.css-weather-icon.clouds::before {
+    content: '';
+    position: absolute;
+    background: linear-gradient(135deg, #e6e6e6 0%, #b0b0b0 100%);
+    width: 40px;
+    height: 20px;
+    border-radius: 20px;
+    top: 25px;
+    left: 5px;
+    box-shadow: 
+        15px -5px 0 5px #e6e6e6,
+        25px 0 0 0 #d0d0d0;
+}
+
+/* Rainy */
+.css-weather-icon.rain::before {
+    content: '';
+    position: absolute;
+    background: linear-gradient(135deg, #a0a0a0 0%, #808080 100%);
+    width: 40px;
+    height: 20px;
+    border-radius: 20px;
+    top: 15px;
+    left: 5px;
+    box-shadow: 
+        15px -5px 0 5px #a0a0a0,
+        25px 0 0 0 #909090;
+}
+
+.css-weather-icon.rain::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #4a9fff;
+    border-radius: 50%;
+    top: 40px;
+    left: 15px;
+    box-shadow: 
+        10px 2px 0 #4a9fff,
+        20px 0 0 #4a9fff,
+        30px 3px 0 #4a9fff,
+        5px 8px 0 #4a9fff,
+        15px 10px 0 #4a9fff,
+        25px 8px 0 #4a9fff;
+    animation: rainDrop 1s linear infinite;
+}
+
+/* Snow */
+.css-weather-icon.snow::before {
+    content: '';
+    position: absolute;
+    background: linear-gradient(135deg, #f0f0f0 0%, #c0c0c0 100%);
+    width: 40px;
+    height: 20px;
+    border-radius: 20px;
+    top: 15px;
+    left: 5px;
+    box-shadow: 
+        15px -5px 0 5px #f0f0f0,
+        25px 0 0 0 #e0e0e0;
+}
+
+.css-weather-icon.snow::after {
+    content: '❄';
+    position: absolute;
+    color: #ffffff;
+    font-size: 12px;
+    top: 35px;
+    left: 10px;
+    text-shadow: 
+        15px 0 0 #ffffff,
+        30px 2px 0 #ffffff,
+        5px 8px 0 #ffffff,
+        20px 10px 0 #ffffff,
+        35px 8px 0 #ffffff;
+    animation: snowFall 2s ease-in-out infinite;
+}
+
+/* Thunderstorm */
+.css-weather-icon.thunderstorm::before {
+    content: '';
+    position: absolute;
+    background: linear-gradient(135deg, #4a4a4a 0%, #2a2a2a 100%);
+    width: 40px;
+    height: 20px;
+    border-radius: 20px;
+    top: 15px;
+    left: 5px;
+    box-shadow: 
+        15px -5px 0 5px #4a4a4a,
+        25px 0 0 0 #3a3a3a;
+}
+
+.css-weather-icon.thunderstorm::after {
+    content: '⚡';
+    position: absolute;
+    color: #ffff00;
+    font-size: 20px;
+    top: 30px;
+    left: 20px;
+    animation: lightning 0.5s ease-in-out infinite alternate;
+}
+
+/* Animations */
+@keyframes rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes rainDrop {
+    0% { transform: translateY(-5px); opacity: 1; }
+    100% { transform: translateY(15px); opacity: 0; }
+}
+
+@keyframes snowFall {
+    0%, 100% { transform: translateY(-2px); }
+    50% { transform: translateY(2px); }
+}
+
+@keyframes lightning {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0.7; transform: scale(1.1); }
+}
+
+/* Responsive sizing */
+@media (max-width: 768px) {
+    .css-weather-icon {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .css-weather-icon {
+        width: 40px;
+        height: 40px;
+    }
+}

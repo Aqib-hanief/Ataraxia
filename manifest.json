@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Ataraxia",
+  "author": "Aqib Hanief Bhat",
+  "description": "Replace new tab page with a personal dashboard featuring analog clock, weather, and inspirational quotes.",
+  "version": "1.0.1",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "incognito": "split",
+  "icons": { 
+    "16": "images/favicon-16x16.png",
+    "32": "images/favicon-32x32.png",
+    "128": "icon_128.png" 
+  },
+  "action": {
+    "default_icon": "icon.png"
+  },
+  "permissions": ["geolocation"],
+  "host_permissions": [
+    "https://api.openweathermap.org/*",
+    "https://api.api-ninjas.com/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' https://api.openweathermap.org https://api.api-ninjas.com;"
+  }
+}

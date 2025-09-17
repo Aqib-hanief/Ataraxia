@@ -1,0 +1,63 @@
+/* Weather Icons - Local SVG/Unicode fallback approach */
+.weather-icon {
+    font-size: 3rem;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: weatherPulse 2s ease-in-out infinite alternate;
+    display: inline-block;
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    font-family: Arial, sans-serif;
+    vertical-align: middle;
+}
+
+/* Unicode weather symbols */
+.weather-icon::before {
+    font-size: 3rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Weather conditions using Unicode symbols */
+.weather-icon.wi-day-sunny::before { content: "☀️"; }
+.weather-icon.wi-night-clear::before { content: "🌙"; }
+.weather-icon.wi-day-cloudy::before { content: "⛅"; }
+.weather-icon.wi-night-alt-cloudy::before { content: "☁️"; }
+.weather-icon.wi-rain::before { content: "🌧️"; }
+.weather-icon.wi-sprinkle::before { content: "🌦️"; }
+.weather-icon.wi-thunderstorm::before { content: "⛈️"; }
+.weather-icon.wi-snow::before { content: "🌨️"; }
+.weather-icon.wi-fog::before { content: "🌫️"; }
+.weather-icon.wi-day-haze::before { content: "🌫️"; }
+.weather-icon.wi-dust::before { content: "💨"; }
+.weather-icon.wi-sandstorm::before { content: "💨"; }
+.weather-icon.wi-volcano::before { content: "🌋"; }
+.weather-icon.wi-strong-wind::before { content: "💨"; }
+.weather-icon.wi-tornado::before { content: "🌪️"; }
+.weather-icon.wi-na::before { content: "❓"; }
+
+@keyframes weatherPulse {
+    0% { 
+        transform: scale(1);
+        opacity: 0.9;
+    }
+    100% { 
+        transform: scale(1.05);
+        opacity: 1;
+    }
+}
+
+/* Specific weather condition styles */
+.weather-icon.clear { color: #f39c12; }
+.weather-icon.clouds { color: #95a5a6; }
+.weather-icon.rain { color: #3498db; }
+.weather-icon.snow { color: #ecf0f1; }
+.weather-icon.thunderstorm { color: #9b59b6; }
+.weather-icon.mist { color: #bdc3c7; }
+.weather-icon.fog { color: #95a5a6; }
+
+/* Day/Night variations */
+.weather-icon.day { filter: brightness(1.1); }
+.weather-icon.night { filter: brightness(0.8) hue-rotate(30deg); }
