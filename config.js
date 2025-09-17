@@ -2,16 +2,15 @@
 // TODO: In production, use environment variables or a secure key management system
 
 const CONFIG = {
-    // Weather API configuration
-    WEATHER: {
-        API_KEY: '063b4f1d2a05dd2976b6117f61413b5a', // TODO: Move to environment variable
+   
+   WEATHER: {
+        API_KEY: 'YOUR_OPENWEATHER_API_KEY_HERE', // Get free key at: https://openweathermap.org/api
         BASE_URL: 'https://api.openweathermap.org/data/2.5/find',
         UNITS: 'metric'
     },
     
-    // Quotes API configuration
     QUOTES: {
-        API_KEY: 'sxBiYnl1aZ8Vt7RuJGN/Xw==NVU7pJi6eX7v1YkW', // TODO: Move to environment variable
+        API_KEY: 'YOUR_API_NINJAS_KEY_HERE', // Get free key at: https://api.api-ninjas.com/
         BASE_URL: 'https://api.api-ninjas.com/v1/quotes',
         CATEGORY: 'knowledge'
     },
@@ -31,3 +30,4 @@ const CONFIG = {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = CONFIG;
 }
+
